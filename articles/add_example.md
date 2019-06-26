@@ -59,7 +59,7 @@ wasm2wat add.wasm > add.wat
 
 #### magic 段
 
-此段为每个二进制 wasm 文件 **必有** 的 magic 标识，其内容固定，对应字符 “asm”
+此段为每个二进制 wasm 文件 **必有** 的 magic 标识，其内容固定，对应 “x\00asm”
 
 #### version 段
 

@@ -1,0 +1,5 @@
+cmake_minimum_required (VERSION 2.8)
+PROJECT (AGEDWASM)
+INCLUDE_DIRECTORIES("includes")
+ADD_EXECUTABLE(main main.c)
+ADD_EXECUTABLE(buffer tests/bufferTest.c)

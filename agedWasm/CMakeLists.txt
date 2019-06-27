@@ -12,11 +12,6 @@ ADD_LIBRARY(wasmObjects includes/objects/wasmObjects.c includes/consts/opcodes.h
 ADD_LIBRARY(unity tests/unity/unity.c tests/unity/unity.h tests/unity/unity_internals.h)
 
 ADD_EXECUTABLE(main main.c)
-ADD_EXECUTABLE(bufferT tests/bufferTest.c)
-ADD_EXECUTABLE(vectorT tests/vectorTest.c)
-ADD_EXECUTABLE(decoderT tests/decoderTest.c)
-ADD_EXECUTABLE(readersT tests/readersTest.c)
-ADD_EXECUTABLE(i64readT tests/i64readTest.c)
 
 ADD_EXECUTABLE(tests tests/buffer.h tests/decoder.h tests/readers.h tests/vector.h tests/tests.c)
 

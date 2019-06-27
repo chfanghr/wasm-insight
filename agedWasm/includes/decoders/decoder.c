@@ -7,6 +7,7 @@
 #include <decoders/magicDecoder/magicDecoder.h>
 #include <decoders/typesDecoder/typesDecoder.h>
 #include <decoders/funcsDecoder/funcsDecoder.h>
+#include <decoders/exportsDecoder/exportsDecoder.h>
 #include <datas/readers/byteReaders/byteReaders.h>
 #include <datas/readers/uintReaders/uintReaders.h>
 #include <platform/adaptLibs.h>
@@ -71,6 +72,7 @@ wasmObject_t* decode(byte* wasm, siz_t len){
             break;
         case Seg_export:
             debug_out("Seg Type: export\n");
+            r->exports = decodeExports(&segRAW);
             break;
         case Seg_start:
             debug_out("Seg Type: start\n");

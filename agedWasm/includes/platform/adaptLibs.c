@@ -10,11 +10,11 @@ void panic_a(const char* err){
     abort();
 }
 
-void *malloc_a(size_t size){
+void *malloc_a(size_t_a size){
     return malloc(size);
 }
 
-void *memset_a(void *str, int c, size_t n){
+void *memset_a(void *str, int c, size_t_a n){
     return memset(str,c,n);
 }
 

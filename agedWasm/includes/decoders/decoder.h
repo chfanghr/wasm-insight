@@ -4,8 +4,8 @@
 #include <stdlib.h>
 
 #include <datas/types.h>
-#include <objects/wasmObject.h>
+#include <objects/wasmObjects.h>
 
-WASM_OBJECT * decode(bt8* wasm, size_t len);
+wasmObject_t* decode(bt8* wasm, size_t len);
 
 #endif

@@ -5,11 +5,11 @@
 #include <string.h>
 #include <datas/types.h>
 
-/* Declare a buffer */
-#define BUFFER struct {\
-    bt8 *buffer;\
-    size_t size;\
-}
+typedef struct BUFFER_s
+{
+    bt8* buffer;
+    size_t size;
+} BUFFER;
 
 /* Initialize `BUF` with `SIZE` in size and `FILL` to fill with*/
 #define BUFFER_INIT(BUF,SIZE,FILL) do {\

@@ -13,7 +13,7 @@ ADD_LIBRARY(unity tests/unity/unity.c tests/unity/unity.h tests/unity/unity_inte
 
 ADD_EXECUTABLE(main main.c)
 
-ADD_EXECUTABLE(tests tests/buffer.h tests/decoder.h tests/readers.h tests/vector.h tests/tests.c)
+ADD_EXECUTABLE(tests tests/buffer.h tests/decoder.h tests/readers.h tests/vector.h tests/tests.c tests/fix_msvc.c)
 
 TARGET_LINK_LIBRARIES(tests unity decoder wasmObjects readers adaptlibs)
 TARGET_LINK_LIBRARIES(main adaptlibs)

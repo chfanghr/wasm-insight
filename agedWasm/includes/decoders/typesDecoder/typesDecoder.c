@@ -15,7 +15,7 @@ typesObject_t* decodeTypes(BUFFER* buf){
     VECTOR_INIT(res->types);
 
     u32 i = 0;
-    for(i=0;i<typesCount;i++){
+    if(typesCount>0) for(i=0;i<typesCount;i++){
         ASSERT_A((readByte8(buf,&offset)==Type_func),"decode type failed!\n");
         debug_out("typeIndex: %d\n",i);
 

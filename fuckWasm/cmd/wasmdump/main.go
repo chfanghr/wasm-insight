@@ -23,5 +23,10 @@ func main() {
 	fmt.Printf("#sections: %d\n", len(mod.Sections))
 	for _, section := range mod.Sections {
 		fmt.Printf("section: %2d (%T)\n", section.ID(), section)
+		if section.ID() == wasm.CodeID {
+			for _, v := range section.(wasm.CodeSection).Bodies {
+				fmt.Println(v.Code.Operations)
+			}
+		}
 	}
 }

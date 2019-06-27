@@ -182,8 +182,11 @@ type Code struct {
 
 func (o Opcode) parse(r io.Reader) ([]Param, error) {
 	switch o {
+	case Op_get_local:
+		p, _, err := uvarint(r)
+		return []Param{p}, err
 	case Op_i32_const:
-		p, _, err := varint(r)
+		p, _, err := uvarint(r)
 		return []Param{p}, err
 	default:
 		return nil, nil

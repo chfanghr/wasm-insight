@@ -1,9 +1,12 @@
 #ifndef _TYPESOBJECT_H
 #define _TYPESOBJECT_H
 
+#include <datas/vector.h>
+#include "typeObject.h"
+
 typedef struct typesObject_s
 {
-    int placeholder;
+    VECTOR_OF(typeObject_t*) types;
 } typesObject_t;
 
 

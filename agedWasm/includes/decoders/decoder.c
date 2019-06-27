@@ -6,12 +6,13 @@
 #include <consts/nums.h>
 #include <decoders/magicDecoder/magicDecoder.h>
 #include <decoders/typesDecoder/typesDecoder.h>
+#include <decoders/funcsDecoder/funcsDecoder.h>
 #include <datas/readers/byteReaders/byteReaders.h>
 #include <datas/readers/uintReaders/uintReaders.h>
 #include <platform/adaptLibs.h>
 
 wasmObject_t* decode(byte* wasm, siz_t len){
-    wasmObject_t* r;
+    wasmObject_t* r = malloc_a(sizeof(wasmObject_t));
     
     siz_t pointer = 0;
     BUFFER wasmRAW;
@@ -50,13 +51,14 @@ wasmObject_t* decode(byte* wasm, siz_t len){
             break;
         case Seg_type:
             debug_out("Seg Type: type\n");
-            decodeTypes(&segRAW);
+            r->types = decodeTypes(&segRAW);
             break;
         case Seg_import:
             debug_out("Seg Type: import\n");
             break;
         case Seg_function:
             debug_out("Seg Type: function\n");
+            r->funcs = decodeFuncs(&segRAW);
             break;
         case Seg_table:
             debug_out("Seg Type: table\n");

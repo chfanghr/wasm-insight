@@ -1,11 +1,10 @@
 #include "byteReaders.h"
 
-#include <stdio.h>
+#include <platform/adaptLibs.h>
 
-byte readByte8(BUFFER* buf,size_t* offset){
+byte readByte8(BUFFER* buf,siz_t* offset){
     if(BUFFER_SIZE(*buf)<1){
-        fputs("read byte fail!\n", stderr);
-        abort();
+        panic_a("read bytes failed!\n");
     }
     byte res = BUFFER_DATA(*buf)[*offset];
     *offset += sizeof(byte);

@@ -1,22 +1,21 @@
 #ifndef _VECTOR_H
 #define _VECTOR_H
 
-#include <stdlib.h>
-#include <stdio.h>
+#include <datas/types.h>
+#include <platform/adaptLibs.h>
 
 /* Declare a vector of type `TYPE`. */
 #define VECTOR_OF(TYPE) struct { \
     TYPE *data; \
-    size_t size; \
-    size_t capacity; \
+    siz_t size; \
+    siz_t capacity; \
 }
 
 /* Initialize `VEC` with `N` capacity. */
 #define VECTOR_INIT_CAPACITY(VEC, N) do { \
-    (VEC).data = malloc((N) * sizeof(*(VEC).data)); \
+    (VEC).data = malloc_a((N) * sizeof(*(VEC).data)); \
     if (!(VEC).data) { \
-        fputs("malloc failed!\n", stderr); \
-        abort(); \
+        panic_a("malloc failed!\n");\
     } \
     (VEC).size = 0; \
     (VEC).capacity = (N); \
@@ -38,11 +37,10 @@
    necessary. */
 #define VECTOR_PUSH_BACK(VEC, VAL) do { \
     if ((VEC).size + 1 > (VEC).capacity) { \
-        size_t n = (VEC).capacity * 2; \
-        void *p = realloc((VEC).data, n * sizeof(*(VEC).data)); \
+        siz_t n = (VEC).capacity * 2; \
+        void *p = realloc_a((VEC).data, n * sizeof(*(VEC).data)); \
         if (!p) { \
-            fputs("realloc failed!\n", stderr); \
-            abort(); \
+            panic_a("realloc failed!\n");\
         } \
         (VEC).data = p; \
         (VEC).capacity = n; \
@@ -63,7 +61,7 @@
 #define VECTOR_FREE(VEC) do { \
     (VEC).size = 0; \
     (VEC).capacity = 0; \
-    free((VEC).data); \
+    free_a((VEC).data); \
 } while(0)
 
 #endif /* !defined VECTOR_H_ */

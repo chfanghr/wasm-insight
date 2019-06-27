@@ -1,5 +1,6 @@
-#include <stdio.h>
+#include <datas/types.h>
 #include <datas/buffer.h>
+#include <platform/adaptLibs.h>
 
 int main(){
     BUFFER buf;
@@ -12,10 +13,10 @@ int main(){
     BUFFER_FILL(ori,4,magic,4);
 
     BUFFER_SLCE(buf,1,ori,5,3);
-    printf("%s\n",BUFFER_DATA(buf));
+    debug_out("%s\n",BUFFER_DATA(buf));
 
     BUFFER_FILL(buf,1,"eagic",2);
-    printf("%s\n",BUFFER_DATA(buf));
+    debug_out("%s\n",BUFFER_DATA(buf));
 
     BUFFER_FILL(buf,0,magic,4);
     i32 read;

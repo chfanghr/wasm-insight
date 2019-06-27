@@ -1,22 +1,20 @@
 #include "uintReaders.h"
 
-#include <stdio.h>
+#include <platform/adaptLibs.h>
 
-u64 readUint64(BUFFER* buf,size_t* offset){
+u64 readUint64(BUFFER* buf,siz_t* offset){
     u64 res = 0;
     byte b = 0;
-    int s = 0;
-    int i = 0;
+    i32 s = 0;
+    i32 i = 0;
     for(i=0;;i++){
         if(i>=BUFFER_SIZE(*buf)){
-            fputs("read u64 fail!\n", stderr);
-            abort();
+            panic_a("read u64 failed!\n");
         }
         BUFFER_READ(*buf,i+*offset,&b,sizeof(byte));
         if(b<0x80){
             if(i>9 || i==9&&b>1){
-                fputs("read u64 overflow!\n", stderr);
-                abort();
+                panic_a("read u64 overflow!\n");
             }
             *offset += (i+1)*sizeof(byte);
             res |= (u64)b << s;
@@ -27,21 +25,19 @@ u64 readUint64(BUFFER* buf,size_t* offset){
     }
 }
 
-u32 readUint32(BUFFER* buf,size_t* offset){
+u32 readUint32(BUFFER* buf,siz_t* offset){
     u32 res = 0;
     byte b = 0;
-    int s = 0;
-    int i = 0;
+    i32 s = 0;
+    i32 i = 0;
     for(i=0;;i++){
         if(i>=BUFFER_SIZE(*buf)){
-            fputs("read u32 fail!\n", stderr);
-            abort();
+            panic_a("read u32 failed!\n");
         }
         BUFFER_READ(*buf,i+*offset,&b,sizeof(byte));
         if(b<0x80){
             if(i>5 || i==5&&b>1){
-                fputs("read u32 overflow!\n", stderr);
-                abort();
+                panic_a("read u32 overflow!\n");
             }
             *offset += (i+1)*sizeof(byte);
             res |= (u32)b << s;

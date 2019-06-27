@@ -3,7 +3,7 @@
 
 typedef struct typesObject_s
 {
-    /* data */
+    int placeholder;
 } typesObject_t;
 
 

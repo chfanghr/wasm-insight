@@ -3,7 +3,7 @@
 
 typedef struct startObject_s
 {
-    /* data */
+    int placeholder;
 } startObject_t;
 
 #endif

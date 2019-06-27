@@ -3,7 +3,7 @@
 
 typedef struct exportsObject_s
 {
-    /* data */
+    int placeholder;
 } exportsObject_t;
 
 #endif

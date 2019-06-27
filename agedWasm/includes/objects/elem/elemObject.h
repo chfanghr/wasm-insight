@@ -3,7 +3,7 @@
 
 typedef struct elemObject_s
 {
-    /* data */
+    int placeholder;
 } elemObject_t;
 
 #endif

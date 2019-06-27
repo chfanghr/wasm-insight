@@ -3,7 +3,7 @@
 
 typedef struct globalsObject_s
 {
-    /* data */
+    int placeholder;
 } globalsObject_t;
 
 #endif

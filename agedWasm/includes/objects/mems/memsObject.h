@@ -3,7 +3,7 @@
 
 typedef struct memsObject_s
 {
-    /* data */
+    int placeholder;
 } memsObject_t;
 
 #endif

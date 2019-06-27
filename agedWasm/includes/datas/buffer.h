@@ -4,14 +4,13 @@
 #include <datas/types.h>
 #include <platform/adaptLibs.h>
 
-typedef struct BUFFER_s
-{
-    byte* buffer;
+typedef struct BUFFER_s {
+    byte *buffer;
     siz_t size;
 } BUFFER;
 
 /* Initialize `BUF` with `SIZE` in size and `FILL` to fill with*/
-#define BUFFER_INIT(BUF,SIZE,FILL) do {\
+#define BUFFER_INIT(BUF, SIZE, FILL) do {\
     (BUF).buffer = malloc_a((SIZE)*sizeof(byte));\
     if(!(BUF).buffer){\
         panic_a("malloc failed!\n");\
@@ -22,12 +21,12 @@ typedef struct BUFFER_s
 
 /* Free a buffer */
 #define BUFFER_FREE(BUF) do {\
+    if(（BUF）.size!=0)free_a((BUF).buffer);\
     (BUF).size = 0;\
-    free_a((BUF).buffer);\
 } while(0)
 
 /* Fill data in size of `SIZ` from `PTR` to buffer `BUF` with offset of buffer`OFFS`*/
-#define BUFFER_FILL(BUF,OFFS,PTR,SIZ) do {\
+#define BUFFER_FILL(BUF, OFFS, PTR, SIZ) do {\
     if((OFFS)+(SIZ)>BUFFER_SIZE(BUF) || (SIZ)<0){\
         panic_a("fill failed!\n");\
     }\
@@ -36,7 +35,7 @@ typedef struct BUFFER_s
 } while(0)
 
 /* Fill data in size of `SIZ` from buffer `ORI` with offset `OFF` to buffer `BUF` with offset `OFFS` */
-#define BUFFER_SLCE(BUF,OFFS,ORI,OFF,SIZ) do {\
+#define BUFFER_SLCE(BUF, OFFS, ORI, OFF, SIZ) do {\
     if((OFF)+(SIZ)>BUFFER_SIZE(ORI) || (OFFS)+(SIZ)>BUFFER_SIZE(BUF)){\
         panic_a("slice failed\n");\
     }\
@@ -44,7 +43,7 @@ typedef struct BUFFER_s
 } while(0)
 
 /* Read data in size of `SIZ` from buffer `BUF` with offset `OFFS` to `PTR` */
-#define BUFFER_READ(BUF,OFFS,PTR,SIZ) do {\
+#define BUFFER_READ(BUF, OFFS, PTR, SIZ) do {\
     if((OFFS)+(SIZ)>BUFFER_SIZE(BUF) || (SIZ)<0){\
         panic_a("read failed!\n");\
     }\

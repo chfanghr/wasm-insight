@@ -7,7 +7,7 @@
 int main(){
     byte magic[] = {0x00,0x61,0x73,0x6d};
     byte version[] = {0x01,0x00,0x00,0x00};
-    int i=0;
+    u32 i = 0;
     
     BUFFER buf;
     BUFFER_INIT(buf,sizeof_addExample,0x00);

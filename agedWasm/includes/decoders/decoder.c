@@ -9,7 +9,7 @@
 #include <datas/readers/byteReaders/byteReaders.h>
 #include <datas/readers/uintReaders/uintReaders.h>
 
-wasmObject_t* decode(bt8* wasm, size_t len){
+wasmObject_t* decode(byte* wasm, size_t len){
     wasmObject_t* r;
     
     size_t pointer = 0;
@@ -31,7 +31,7 @@ wasmObject_t* decode(bt8* wasm, size_t len){
     while (true)
     {
         if(pointer>=BUFFER_SIZE(wasmRAW)) break;
-        bt8 id;
+        byte id;
         u32 len;
         id = readByte8(&wasmRAW,&pointer);
         len = readUint32(&wasmRAW,&pointer);

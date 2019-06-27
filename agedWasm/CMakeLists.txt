@@ -7,7 +7,7 @@ SET(LIBRARY_OUTPUT_PATH ./lib/)
 
 ADD_LIBRARY(decoder includes/decoders/decoder.c includes/decoders/magicDecoder/magicDecoder.c)
 ADD_LIBRARY(readers includes/datas/readers/uintReaders/uintReaders.c includes/datas/readers/byteReaders/byteReaders.c)
-ADD_LIBRARY(wasmObjects includes/objects/wasmObjects.c)
+ADD_LIBRARY(wasmObjects includes/objects/wasmObjects.c includes/consts/opcodes.h)
 
 ADD_EXECUTABLE(main main.c)
 ADD_EXECUTABLE(bufferT tests/bufferTest.c)

@@ -6,6 +6,6 @@
 #include <datas/types.h>
 #include <objects/wasmObjects.h>
 
-wasmObject_t* decode(bt8* wasm, size_t len);
+wasmObject_t* decode(byte* wasm, size_t len);
 
 #endif

@@ -4,7 +4,7 @@
 int main(){
     BUFFER buf;
     BUFFER ori;
-    bt8 magic[] = {0x5f,0x61,0x73,0x6d};
+    byte magic[] = {0x5f,0x61,0x73,0x6d};
 
     BUFFER_INIT(buf,4,0x5f);
     BUFFER_INIT(ori,8,0x5f);

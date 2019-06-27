@@ -7,13 +7,13 @@
 
 typedef struct BUFFER_s
 {
-    bt8* buffer;
+    byte* buffer;
     size_t size;
 } BUFFER;
 
 /* Initialize `BUF` with `SIZE` in size and `FILL` to fill with*/
 #define BUFFER_INIT(BUF,SIZE,FILL) do {\
-    (BUF).buffer = malloc((SIZE)*sizeof(bt8));\
+    (BUF).buffer = malloc((SIZE)*sizeof(byte));\
     if(!(BUF).buffer){\
         fputs("malloc failed!\n", stderr);\
         abort();\

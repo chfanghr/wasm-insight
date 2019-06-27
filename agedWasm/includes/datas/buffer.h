@@ -11,7 +11,7 @@ typedef struct BUFFER_s {
 
 /* Initialize `BUF` with `SIZE` in size and `FILL` to fill with*/
 #define BUFFER_INIT(BUF, SIZE, FILL) do {\
-    (BUF).buffer = malloc_a((SIZE)*sizeof(byte));\
+    (BUF).buffer = (byte*)malloc_a((SIZE)*sizeof(byte));\
     ASSERT_A((BUF).buffer,"malloc failed!\n");\
     (BUF).size = (SIZE);\
     memset_a(BUFFER_DATA((BUF)),(FILL),BUFFER_SIZE((BUF)));\

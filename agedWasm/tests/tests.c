@@ -10,6 +10,9 @@
 
 int main() {
     UNITY_BEGIN();
-    RUN_TEST(test_buffer, test_decoder, test_readers, test_vector);
+    RUN_TEST(test_buffer);
+    RUN_TEST(test_decoder);
+    RUN_TEST(test_readers);
+    RUN_TEST(test_vector);
     return UNITY_END();
 }

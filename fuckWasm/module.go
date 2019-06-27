@@ -1,6 +1,7 @@
 package fuckWasm
 
 import (
+	"bytes"
 	"fmt"
 	"io"
 	"os"
@@ -166,9 +167,47 @@ type FunctionBody struct {
 	Code       Code
 }
 
+type Param interface{}
+
+type Operation struct {
+	Instruction Opcode
+	Params      []Param
+}
+
 type Code struct {
-	Code []byte
-	End  byte
+	Code       []byte
+	End        byte
+	Operations []Operation
+}
+
+func (o Opcode) parse(r io.Reader) ([]Param, error) {
+	switch o {
+	case Op_i32_const:
+		p, _, err := varint(r)
+		return []Param{p}, err
+	default:
+		return nil, nil
+	}
+}
+
+func (c *Code) parse() error {
+	buf := bytes.NewBuffer(c.Code)
+
+	for {
+		op, err := buf.ReadByte()
+		if err != nil {
+			if err == io.EOF {
+				return nil
+			}
+			return err
+		}
+
+		ps, err := Opcode(op).parse(buf)
+		if err != nil {
+			return err
+		}
+		c.Operations = append(c.Operations, Operation{Opcode(op), ps})
+	}
 }
 
 type LocalEntry struct {

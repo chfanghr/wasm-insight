@@ -16,7 +16,7 @@ func main() {
 	fname := flag.Arg(0)
 	mod, err := wasm.Open(fname)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatalln(err)
 	}
 
 	fmt.Printf("module header: %v\n", mod.Header)

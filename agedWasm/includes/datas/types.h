@@ -11,4 +11,7 @@ typedef double      f64;
 
 typedef char        bt8;
 
+typedef uint32_t    u32;
+typedef uint64_t    u64;
+
 #endif

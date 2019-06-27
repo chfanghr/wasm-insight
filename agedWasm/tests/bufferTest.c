@@ -21,7 +21,7 @@ int main(){
     BUFFER_FILL(buf,0,magic,4);
     i32 read;
     BUFFER_READ(buf,0,&read,sizeof(i32));
-    printf("%d\n",read);
+    debug_out("%d\n", read);
 
     BUFFER_FREE(buf);
     BUFFER_FREE(ori);

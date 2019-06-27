@@ -14,17 +14,17 @@
 #include <objects/magic/magicObject.h>
 
 typedef struct wasmObject_s {
-    typesObject_t       types;
-    funcsObject_t       funcs;
-    tablesObject_t      tables;
-    memsObject_t        mems;
-    globalsObject_t     globals;
-    elemObject_t        elem;
-    dataObject_t        data;
-    startObject_t       start;
-    importsObject_t     imports;
-    exportsObject_t     exports;
-    magicObject_t       magic;
+    typesObject_t*       types;
+    funcsObject_t*       funcs;
+    tablesObject_t*      tables;
+    memsObject_t*        mems;
+    globalsObject_t*     globals;
+    elemObject_t*        elem;
+    dataObject_t*        data;
+    startObject_t*       start;
+    importsObject_t*     imports;
+    exportsObject_t*     exports;
+    magicObject_t*       magic;
 } wasmObject_t;
 
 #endif

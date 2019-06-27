@@ -11,7 +11,7 @@
 #include <platform/adaptLibs.h>
 
 wasmObject_t* decode(byte* wasm, siz_t len){
-    wasmObject_t* r;
+    wasmObject_t* r = malloc_a(sizeof(wasmObject_t));
     
     siz_t pointer = 0;
     BUFFER wasmRAW;
@@ -50,7 +50,7 @@ wasmObject_t* decode(byte* wasm, siz_t len){
             break;
         case Seg_type:
             debug_out("Seg Type: type\n");
-            decodeTypes(&segRAW);
+            r->types = decodeTypes(&segRAW);
             break;
         case Seg_import:
             debug_out("Seg Type: import\n");

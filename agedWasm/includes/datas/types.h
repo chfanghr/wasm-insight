@@ -16,5 +16,6 @@ typedef u64_a     u64;
 #define false 0
 
 typedef byte Seg_id;
+typedef byte Val_type;
 
 #endif

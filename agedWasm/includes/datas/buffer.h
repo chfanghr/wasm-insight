@@ -4,24 +4,29 @@
 #include <datas/types.h>
 #include <platform/adaptLibs.h>
 
-typedef struct BUFFER_s
-{
-    byte* buffer;
+typedef struct BUFFER_s {
+    byte *buffer;
     siz_t size;
 } BUFFER;
 
 /* Initialize `BUF` with `SIZE` in size and `FILL` to fill with*/
-#define BUFFER_INIT(BUF,SIZE,FILL) do {\
+#define BUFFER_INIT(BUF, SIZE, FILL) do {\
     (BUF).buffer = malloc_a((SIZE)*sizeof(byte));\
+<<<<<<< HEAD
     ASSERT_A((BUF).buffer,"malloc failed!\n");\
+=======
+    if(!(BUF).buffer){\
+        panic_a("malloc failed!\n");\
+    }\
+>>>>>>> d8048adceae9bbcfcd9b184ef6df1e89b5cfcfe8
     (BUF).size = (SIZE);\
     memset_a(BUFFER_DATA((BUF)),(FILL),BUFFER_SIZE((BUF)));\
 } while(0)
 
 /* Free a buffer */
 #define BUFFER_FREE(BUF) do {\
+    if((BUF).size>0)free_a((BUF).buffer);\
     (BUF).size = 0;\
-    free_a((BUF).buffer);\
 } while(0)
 
 /* Fill data in size of `SIZ` from `PTR` to buffer `BUF` with offset of buffer`OFFS`*/

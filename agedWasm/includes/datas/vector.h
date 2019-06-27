@@ -55,9 +55,9 @@
 #define VECTOR_BACK(VEC) (VEC).data[VECTOR_SIZE(VEC) - 1]
 
 #define VECTOR_FREE(VEC) do { \
+    if((VEC).capacity>0)free_a((VEC).data); \
     (VEC).size = 0; \
     (VEC).capacity = 0; \
-    free_a((VEC).data); \
 } while(0)
 
 #endif /* !defined VECTOR_H_ */

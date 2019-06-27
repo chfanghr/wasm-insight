@@ -17,5 +17,6 @@ typedef u64_a     u64;
 
 typedef byte Seg_id;
 typedef byte Val_type;
+typedef u32  Idx_type;
 
 #endif

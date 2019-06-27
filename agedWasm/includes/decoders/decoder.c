@@ -6,6 +6,7 @@
 #include <consts/nums.h>
 #include <decoders/magicDecoder/magicDecoder.h>
 #include <decoders/typesDecoder/typesDecoder.h>
+#include <decoders/funcsDecoder/funcsDecoder.h>
 #include <datas/readers/byteReaders/byteReaders.h>
 #include <datas/readers/uintReaders/uintReaders.h>
 #include <platform/adaptLibs.h>
@@ -57,6 +58,7 @@ wasmObject_t* decode(byte* wasm, siz_t len){
             break;
         case Seg_function:
             debug_out("Seg Type: function\n");
+            r->funcs = decodeFuncs(&segRAW);
             break;
         case Seg_table:
             debug_out("Seg Type: table\n");

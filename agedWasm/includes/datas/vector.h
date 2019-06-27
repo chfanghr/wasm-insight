@@ -14,9 +14,7 @@
 /* Initialize `VEC` with `N` capacity. */
 #define VECTOR_INIT_CAPACITY(VEC, N) do { \
     (VEC).data = malloc_a((N) * sizeof(*(VEC).data)); \
-    if (!(VEC).data) { \
-        panic_a("malloc failed!\n");\
-    } \
+    ASSERT_A((!(VEC).data),"malloc failed!\n");\
     (VEC).size = 0; \
     (VEC).capacity = (N); \
 } while (0)
@@ -39,9 +37,7 @@
     if ((VEC).size + 1 > (VEC).capacity) { \
         siz_t n = (VEC).capacity * 2; \
         void *p = realloc_a((VEC).data, n * sizeof(*(VEC).data)); \
-        if (!p) { \
-            panic_a("realloc failed!\n");\
-        } \
+        ASSERT_A((!p),"realloc failed!\n");\
         (VEC).data = p; \
         (VEC).capacity = n; \
     } \

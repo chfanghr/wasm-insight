@@ -15,4 +15,6 @@ void *realloc_a(void *ptr, size_t_a size);
 
 int debug_out(const char *format, ...);
 
+#define ASSERT_A(COND,ERR) do {if(!COND) panic_a(ERR);} while(0)
+
 #endif

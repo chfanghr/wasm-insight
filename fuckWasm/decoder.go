@@ -608,6 +608,12 @@ func (d *decoder) readCode(r io.Reader, code *Code) {
 	}
 	if err != nil {
 		d.err = err
+		return
+	}
+	err=code.parse()
+	if err != nil {
+		d.err = err
+		return
 	}
 }
 

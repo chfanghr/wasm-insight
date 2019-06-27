@@ -32,7 +32,7 @@ typedef struct BUFFER_s
         panic_a("fill failed!\n");\
     }\
     i32 i;\
-    for(int i=0;i<(SIZ);i++) BUFFER_DATA(BUF)[(OFFS)+i] = (PTR)[i];\
+    for(i=0;i<(i32)(SIZ);i++) BUFFER_DATA(BUF)[(OFFS)+i] = (PTR)[i];\
 } while(0)
 
 /* Fill data in size of `SIZ` from buffer `ORI` with offset `OFF` to buffer `BUF` with offset `OFFS` */

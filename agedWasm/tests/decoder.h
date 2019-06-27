@@ -1,7 +1,6 @@
 #include <decoders/decoder.h>
 #include <addExample.h>
 
-int main(){
+void test_decoder() {
     decode(addExample,sizeof_addExample);
-    return 0;
 }

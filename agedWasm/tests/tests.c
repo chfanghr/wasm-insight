@@ -15,6 +15,6 @@ int main() {
     RUN_TEST(test_decoder);
 //    RUN_TEST(test_readers);
     RUN_TEST(test_vector);
-    RUN_TEST(test_i64_read);
+//    RUN_TEST(test_i64_read);
     return UNITY_END();
 }

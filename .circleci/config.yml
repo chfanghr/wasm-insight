@@ -9,8 +9,16 @@ jobs:
 
       - run:
           name: Set up golang building environment
-          command: apt update;apt install -y wget;wget https://dl.google.com/go/go1.12.6.linux-amd64.tar.gz;tar -C /usr/local -xzf go1.12.6.linux-amd64.tar.gz
+          command: apt update;apt install -y wget;\
+                    wget https://dl.google.com/go/go1.12.6.linux-amd64.tar.gz;\
+                    tar -C /usr/local -xzf go1.12.6.linux-amd64.tar.gz;rm go1.12.6.linux-amd64.tar.gz
 
       - run:
           name: Set up c/cpp building environment
           command: apt install -y cmake make gcc g++
+
+      - run:
+          name: build fuckWASM
+          command: cd fuckWasm;\
+                    go get -u -v .;\
+                    GOARCH=arm GOOS=linux go build  

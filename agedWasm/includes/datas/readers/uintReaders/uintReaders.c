@@ -1,6 +1,7 @@
 #include "uintReaders.h"
 
 #include <platform/adaptLibs.h>
+#include <stdbool.h>
 
 //FIXME
 u64 readUint64(BUFFER *buf, siz_t *offset) {

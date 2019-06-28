@@ -3,6 +3,7 @@
 
 #include <datas/type.h>
 #include <platform/adaptLibs.h>
+#include "type.h"
 
 typedef struct BUFFER_s {
     byte *buffer;

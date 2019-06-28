@@ -1,7 +1,7 @@
 #ifndef _EXPORTOBJECT_H
 #define _EXPORTOBJECT_H
 
-#include <datas/types.h>
+#include <datas/str.h>
 
 typedef struct exportObject_s
 {

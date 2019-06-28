@@ -1,7 +1,7 @@
 #ifndef _IMPORTSOBJECT_H
 #define _IMPORTSOBJECT_H
 
-#include <datas/types.h>
+#include <datas/str.h>
 #include <objects/imports/importObject.h>
 
 typedef struct importsObject_s

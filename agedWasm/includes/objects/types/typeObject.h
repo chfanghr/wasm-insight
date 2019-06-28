@@ -1,7 +1,7 @@
 #ifndef _TYPEOBJECT_H
 #define _TYPEOBJECT_H
 
-#include <datas/types.h>
+#include <datas/str.h>
 
 typedef struct typeObject_s
 {

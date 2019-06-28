@@ -1,7 +1,7 @@
 #ifndef _ADDEXAMPLE_H
 #define _ADDEXAMPLE_H
 
-#include <datas/types.h>
+#include <datas/str.h>
 
 byte addExample[] = {
     0x00,0x61,0x73,0x6d,

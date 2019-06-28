@@ -5,7 +5,7 @@
 #ifndef AGEDWASM_OPCODES_H
 #define AGEDWASM_OPCODES_H
 
-#include <datas/types.h>
+#include <datas/str.h>
 
 typedef byte op_code;
 

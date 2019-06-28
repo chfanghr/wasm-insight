@@ -15,8 +15,9 @@ exportsObject_t* decodeExports(BUFFER* buf){
     if(exportsCount>0) for(i=0;i<exportsCount;i++){
         exportObject_t* obj = malloc_a(sizeof(exportObject_t));
         obj->name = readString(buf,&offset);
+        obj->type = readByte8(buf,&offset);
         obj->idx = readUint32(buf,&offset);
-        debug_out("export idx: %d\n",obj->idx);
+        debug_out("export name: %s idx: %d\n",obj->name,obj->idx);
         VECTOR_PUSH_BACK(res->exports,obj);
     }
 

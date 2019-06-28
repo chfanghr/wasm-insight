@@ -1,4 +1,4 @@
-#include <datas/str.h>
+#include <datas/types.h>
 #include <platform/adaptLibs.h>
 
 void test_buffer() {

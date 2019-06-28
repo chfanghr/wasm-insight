@@ -1,4 +1,4 @@
-#include <datas/str.h>
+#include <datas/types.h>
 #include <addExample.h>
 #include <platform/adaptLibs.h>
 

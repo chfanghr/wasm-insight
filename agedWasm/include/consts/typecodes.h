@@ -1,7 +1,7 @@
 #ifndef _TYPECODES_H
 #define _TYPECODES_H
 
-#include <datas/str.h>
+#include <datas/types.h>
 
 typedef byte type_code;
 

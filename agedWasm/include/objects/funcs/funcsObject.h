@@ -1,7 +1,7 @@
 #ifndef _FUNCSOBJECT_H
 #define _FUNCSOBJECT_H
 
-#include <datas/str.h>
+#include <datas/types.h>
 
 typedef struct funcsObject_s {
     VECTOR_OF(Idx_type) funcs;

@@ -22,7 +22,7 @@ wasmObject_t* decode(byte* wasm, siz_t len){
     BUFFER_INIT(magicRAW,sizeof_magic+sizeof(i32),0x00);
     BUFFER_SLCE(magicRAW,0,wasmRAW,0,sizeof_magic+sizeof(i32));
     magicObject_t* res = decodeMagic(&magicRAW);
-    debug_out("WASM Version: %d\n",res->version);
+    debug_out("\nWASM Version: %d\n",res->version);
     free_a(res);
     BUFFER_FREE(magicRAW);
     pointer += sizeof_magic+sizeof(i32);
@@ -35,8 +35,8 @@ wasmObject_t* decode(byte* wasm, siz_t len){
         u32 len;
         id = readByte8(&wasmRAW,&pointer);
         len = readUint32(&wasmRAW,&pointer);
-        debug_out("Seg ID: %x\n",id);
-        debug_out("Seg len: %d\n",len);
+        debug_out("Seg ID: %x ",id);
+        debug_out("Seg len: %d ",len);
 
         BUFFER segRAW;
         BUFFER_INIT(segRAW,len,0x00);

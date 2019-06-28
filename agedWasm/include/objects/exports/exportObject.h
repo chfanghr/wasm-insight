@@ -1,11 +1,12 @@
 #ifndef _EXPORTOBJECT_H
 #define _EXPORTOBJECT_H
 
-#include <datas/str.h>
+#include <datas/types.h>
 
 typedef struct exportObject_s
 {
-    str_t* name;
+    chr8* name;
+    Kind_type type;
     Idx_type idx;
 } exportObject_t;
 

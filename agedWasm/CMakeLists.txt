@@ -43,10 +43,7 @@ ADD_LIBRARY(consts
         )
 
 ADD_LIBRARY(datas
-        include/datas/buffer.h
-        include/datas/type.h
-        include/datas/str.h#TODO remove this file,use type.h instead
-        include/datas/vector.h
+        include/datas/types.h
         include/datas/datas.c)
 
 ADD_EXECUTABLE(main main.c)

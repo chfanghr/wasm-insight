@@ -17,7 +17,7 @@ importsObject_t* decodeImports(BUFFER* buf){
         obj->module = readString(buf,&offset);
         obj->field = readString(buf,&offset);
         obj->kind = readByte8(buf,&offset);
-        debug_out("import kind: %x\n",obj->kind);
+        debug_out("import module: %s field: %s kind: %x\n",obj->module,obj->field,obj->kind);
         VECTOR_PUSH_BACK(res->imports,obj);
         break;
     }

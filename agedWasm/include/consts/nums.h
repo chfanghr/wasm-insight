@@ -1,7 +1,7 @@
 #ifndef _NUMS_H
 #define _NUMS_H
 
-#include <datas/str.h>
+#include <datas/types.h>
 
 #define sizeof_magic 4
 

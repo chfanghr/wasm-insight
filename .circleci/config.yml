@@ -1,0 +1,16 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: debian:stretch
+
+    steps:
+      - checkout
+
+      - run:
+          name: Set up golang building environment
+          command: ./install_golang_sdk.sh
+
+      - run:
+          name: Print the Current Time
+          command: ./install_c_toolchain.sh

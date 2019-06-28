@@ -33,3 +33,9 @@ int debug_out(const char *format, ...){
     va_end(args);
     return res;
 }
+
+int endian() {
+    int a = 0x01;
+    return (((u8_a *) (&a))[0] == (u8_a) 1) ? 1 : 0;
+}
+

@@ -11,5 +11,5 @@ typedef double f64_a;
 typedef int8_t byte_a;
 typedef uint32_t u32_a;
 typedef uint64_t u64_a;
-
+typedef uint8_t u8_a;
 #endif

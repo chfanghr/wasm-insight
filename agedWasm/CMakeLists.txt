@@ -21,7 +21,7 @@ ADD_LIBRARY(readers
         include/datas/readers/uintReaders/uintReaders.c
         include/datas/readers/byteReaders/byteReaders.c
         include/datas/readers/stringReaders/stringReaders.c
-        )
+        include/datas/readers/uintReaders/u8.h include/datas/readers/uintReaders/u8.c include/datas/readers/uintReaders/reader.c include/datas/readers/uintReaders/reader.h)
 
 ADD_LIBRARY(wasmObjects
         include/objects/wasmObjects.c

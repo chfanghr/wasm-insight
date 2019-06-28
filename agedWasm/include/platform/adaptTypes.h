@@ -8,7 +8,7 @@ typedef int32_t i32_a;
 typedef int64_t i64_a;
 typedef float f32_a;
 typedef double f64_a;
-typedef char byte_a;
+typedef int8_t byte_a;
 typedef uint32_t u32_a;
 typedef uint64_t u64_a;
 

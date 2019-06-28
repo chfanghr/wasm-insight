@@ -13,8 +13,11 @@ typedef u32_a     u32;
 typedef u64_a     u64;
 typedef byte     chr8;
 
-#define true  1
-#define false 0
+#ifndef bool
+#define bool byte
+#define true  ((byte)1)
+#define false ((byte)0)
+#endif
 
 typedef byte Seg_id;
 typedef byte Val_type;

@@ -9,8 +9,7 @@ jobs:
 
       - run: apt update
       - run: apt upgrade -y
-      - run: apt install wget cmake make gcc g++
+      - run: apt install -y wget cmake make gcc g++
       - run: wget https://dl.google.com/go/go1.12.6.linux-amd64.tar.gz
       - run: tar -C /usr/local go1.12.6.linux-amd64.tar.gz
       - run: cd /usr/bin;ln /usr/local/go/bin/go
-      

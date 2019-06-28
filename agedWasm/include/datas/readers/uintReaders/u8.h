@@ -11,7 +11,7 @@ u8 *swap_u8_array_element_in_place(u8 *arr, siz_t len, siz_t a, siz_t b);
 
 u8 revert_u8_endian(u8 b);
 
-u8 *revert_u8_array_endian(u8 *arr, siz_t len);
+u8 *revert_u8_array_endian_in_place(u8 *arr, siz_t len);
 
 
 #endif //AGEDWASM_U8_H

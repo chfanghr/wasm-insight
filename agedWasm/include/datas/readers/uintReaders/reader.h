@@ -5,7 +5,7 @@
 #ifndef AGEDWASM_READER_H
 #define AGEDWASM_READER_H
 
-#include <datas/str.h>
+#include <datas/types.h>
 
 u32 read_u32(BUFFER *buf);
 

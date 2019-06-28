@@ -1,5 +1,5 @@
 #include <datas/buffer.h>
-#include <datas/readers/byteReaders/byteReaders.h>
+#include <datas/readers/readers.h>
 
 void test_readers() {
     BUFFER buf;

@@ -1,7 +1,6 @@
 #include "funcsDecoder.h"
 
-#include <datas/readers/uintReaders/uintReaders.h>
-#include <datas/readers/byteReaders/byteReaders.h>
+#include <datas/readers/readers.h>
 #include <platform/adaptLibs.h>
 
 funcsObject_t* decodeFuncs(BUFFER* buf){

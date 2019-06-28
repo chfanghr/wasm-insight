@@ -1,10 +1,8 @@
 #include "typesDecoder.h"
 
-#include <datas/readers/uintReaders/uintReaders.h>
-#include <datas/readers/byteReaders/byteReaders.h>
+#include <datas/readers/readers.h>
 #include <platform/adaptLibs.h>
 #include <consts/typecodes.h>
-#include <datas/vector.h>
 
 typesObject_t* decodeTypes(BUFFER* buf){
     siz_t offset = 0;

@@ -1,15 +1,12 @@
 #include "decoder.h"
 
-#include <datas/types.h>
-#include <datas/buffer.h>
-#include <datas/vector.h>
 #include <consts/nums.h>
 #include <decoders/magicDecoder/magicDecoder.h>
 #include <decoders/typesDecoder/typesDecoder.h>
 #include <decoders/funcsDecoder/funcsDecoder.h>
 #include <decoders/exportsDecoder/exportsDecoder.h>
-#include <datas/readers/byteReaders/byteReaders.h>
-#include <datas/readers/uintReaders/uintReaders.h>
+#include <decoders/importsDecoder/importsDecoder.h>
+#include <datas/readers/readers.h>
 #include <platform/adaptLibs.h>
 
 wasmObject_t* decode(byte* wasm, siz_t len){
@@ -56,6 +53,7 @@ wasmObject_t* decode(byte* wasm, siz_t len){
             break;
         case Seg_import:
             debug_out("Seg Type: import\n");
+            r->imports = decodeImports(&segRAW);
             break;
         case Seg_function:
             debug_out("Seg Type: function\n");

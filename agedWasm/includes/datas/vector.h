@@ -1,7 +1,7 @@
 #ifndef _VECTOR_H
 #define _VECTOR_H
 
-#include <datas/types.h>
+#include <datas/type.h>
 #include <platform/adaptLibs.h>
 
 /* Declare a vector of type `TYPE`. */

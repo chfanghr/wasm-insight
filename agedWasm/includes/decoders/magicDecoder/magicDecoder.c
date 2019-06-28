@@ -1,7 +1,5 @@
 #include "magicDecoder.h"
 
-#include <datas/types.h>
-#include <datas/buffer.h>
 #include <consts/nums.h>
 #include <consts/codes.h>
 #include <objects/magic/magicObject.h>

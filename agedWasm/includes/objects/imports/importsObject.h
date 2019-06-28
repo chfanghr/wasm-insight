@@ -1,9 +1,12 @@
 #ifndef _IMPORTSOBJECT_H
 #define _IMPORTSOBJECT_H
 
+#include <datas/types.h>
+#include <objects/imports/importObject.h>
+
 typedef struct importsObject_s
 {
-    int placeholder;
+    VECTOR_OF(importObject_t*) imports;
 } importsObject_t;
 
 #endif

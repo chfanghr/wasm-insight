@@ -1,6 +1,4 @@
 #include <datas/types.h>
-#include <datas/buffer.h>
-#include <datas/vector.h>
 #include <addExample.h>
 #include <platform/adaptLibs.h>
 

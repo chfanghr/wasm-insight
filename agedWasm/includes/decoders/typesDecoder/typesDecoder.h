@@ -1,8 +1,8 @@
 #ifndef _TYPESDECODER_H
 #define _TYPESDECODER_H
 
+#include <datas/types.h>
 #include <objects/types/typesObject.h>
-#include <datas/buffer.h>
 
 typesObject_t* decodeTypes(BUFFER* buf);
 

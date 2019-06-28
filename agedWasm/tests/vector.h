@@ -1,4 +1,3 @@
-#include <datas/vector.h>
 #include <datas/types.h>
 #include <platform/adaptLibs.h>
 

@@ -1,7 +1,6 @@
 #ifndef _FUNCSOBJECT_H
 #define _FUNCSOBJECT_H
 
-#include <datas/vector.h>
 #include <datas/types.h>
 
 typedef struct funcsObject_s {

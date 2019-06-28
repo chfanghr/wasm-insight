@@ -12,10 +12,12 @@ ADD_LIBRARY(decoder
     includes/decoders/typesDecoder/typesDecoder.c
     includes/decoders/funcsDecoder/funcsDecoder.c
     includes/decoders/exportsDecoder/exportsDecoder.c
+    includes/decoders/importsDecoder/importsDecoder.c
 )
 ADD_LIBRARY(readers
     includes/datas/readers/uintReaders/uintReaders.c
     includes/datas/readers/byteReaders/byteReaders.c
+    includes/datas/readers/stringReaders/stringReaders.c
 )
 ADD_LIBRARY(wasmObjects includes/objects/wasmObjects.c includes/consts/opcodes.h)
 ADD_LIBRARY(unity tests/unity/unity.c tests/unity/unity.h tests/unity/unity_internals.h)

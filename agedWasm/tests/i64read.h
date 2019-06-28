@@ -1,6 +1,5 @@
 #include <datas/types.h>
-#include <datas/buffer.h>
-#include <datas/readers/uintReaders/uintReaders.h>
+#include <datas/readers/readers.h>
 #include "unity/unity.h"
 
 void test_i64_read() {

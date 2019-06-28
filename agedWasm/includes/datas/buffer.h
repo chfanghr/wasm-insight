@@ -1,7 +1,7 @@
 #ifndef _BUFFER_H
 #define _BUFFER_H
 
-#include <datas/types.h>
+#include <datas/type.h>
 #include <platform/adaptLibs.h>
 
 typedef struct BUFFER_s {

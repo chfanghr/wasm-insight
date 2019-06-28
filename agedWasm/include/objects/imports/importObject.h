@@ -5,9 +5,9 @@
 
 typedef struct importObject_s
 {
-    str_t*              module;
-    str_t*              field;
-    ImportKind_type     kind;
+    chr8*         module;
+    chr8*         field;
+    Kind_type     kind;
 } importObject_t;
 
 

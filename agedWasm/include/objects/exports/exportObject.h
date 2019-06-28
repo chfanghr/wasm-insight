@@ -5,7 +5,8 @@
 
 typedef struct exportObject_s
 {
-    str_t* name;
+    chr8* name;
+    Kind_type type;
     Idx_type idx;
 } exportObject_t;
 

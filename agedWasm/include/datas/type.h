@@ -11,6 +11,7 @@ typedef f64_a     f64;
 typedef byte_a   byte;
 typedef u32_a     u32;
 typedef u64_a     u64;
+typedef byte     chr8;
 
 #define true  1
 #define false 0
@@ -18,6 +19,6 @@ typedef u64_a     u64;
 typedef byte Seg_id;
 typedef byte Val_type;
 typedef u32  Idx_type;
-typedef byte ImportKind_type;
+typedef byte Kind_type;
 
 #endif

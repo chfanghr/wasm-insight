@@ -3,6 +3,6 @@
 
 #include <datas/types.h>
 
-str_t* readString(BUFFER* buf, siz_t* offset);
+chr8* readString(BUFFER* buf, siz_t* offset);
 
 #endif

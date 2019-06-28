@@ -2,6 +2,7 @@
 
 #include <platform/adaptLibs.h>
 
+//FIXME
 u64 readUint64(BUFFER *buf, siz_t *offset) {
     u64 res = 0;
     byte b = 0;

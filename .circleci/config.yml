@@ -13,3 +13,5 @@ jobs:
       - run: wget https://dl.google.com/go/go1.12.6.linux-amd64.tar.gz
       - run: tar -C /usr/local -xzf go1.12.6.linux-amd64.tar.gz
       - run: cd /usr/bin;ln /usr/local/go/bin/go
+      - run: cd fuckWasm;go get -u -v .;go build ./...;GOARCH=arm GOOS=linux go build -v .
+      - run: cd agedWasm;mkdir build;cd build;cmake ..;make -j8

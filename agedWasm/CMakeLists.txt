@@ -52,3 +52,5 @@ ADD_EXECUTABLE(tests test/buffer.h test/decoder.h test/readers.h test/vector.h t
 
 TARGET_LINK_LIBRARIES(tests unity decoder wasmObjects readers adaptlibs)
 TARGET_LINK_LIBRARIES(main adaptlibs)
+
+ADD_SUBDIRECTORY(data)

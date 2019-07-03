@@ -4,6 +4,8 @@
 #include <datas/types.h>
 #include <objects/wasmObjects.h>
 
-wasmObject_t* decode(byte* wasm, siz_t len);
+#include <array/array.h>
+
+wasmObject_t* decode(array wasm);
 
 #endif

@@ -7,24 +7,24 @@
 #include <decoders/exportsDecoder/exportsDecoder.h>
 #include <decoders/importsDecoder/importsDecoder.h>
 #include <datas/readers/readers.h>
-#include <platform/adaptLibs.h>
 
-wasmObject_t* decode(byte* wasm, siz_t len){
-    wasmObject_t* r = malloc_a(sizeof(wasmObject_t));
+#include <buffer/buffer.h>
+#include <stdlib.h>
+
+wasmObject_t* decode(array wasm){
+    wasmObject_t* r = malloc(sizeof(wasmObject_t));
     
     siz_t pointer = 0;
     BUFFER wasmRAW;
-    BUFFER_INIT(wasmRAW,len,0x00);
-    BUFFER_FILL(wasmRAW,0,wasm,len);
+    BUFFER_INIT(wasmRAW,array_size(wasm),0x00);
+    BUFFER_FILL(wasmRAW,0,(byte*)array_get_data(wasm),array_size(wasm));
 
     /* decode magic */
-    BUFFER magicRAW;
-    BUFFER_INIT(magicRAW,sizeof_magic+sizeof(i32),0x00);
-    BUFFER_SLCE(magicRAW,0,wasmRAW,0,sizeof_magic+sizeof(i32));
-    magicObject_t* res = decodeMagic(&magicRAW);
+    array magicRAWarr = array_slice(wasm,0,sizeof_magic+sizeof(i32));
+    magicObject_t* res = decodeMagic(magicRAWarr);
     debug_out("\nWASM Version: %d\n",res->version);
     free_a(res);
-    BUFFER_FREE(magicRAW);
+    array_destroy(magicRAWarr);
     pointer += sizeof_magic+sizeof(i32);
     
     /* find segs */

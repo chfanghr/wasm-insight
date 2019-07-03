@@ -1,27 +1,18 @@
-#include <datas/types.h>
-#include <platform/adaptLibs.h>
+#include "../data/buffer/buffer.h"
+#include "../data/array/array.h"
 
 void test_buffer() {
-    BUFFER buf;
-    BUFFER ori;
-    byte magic[] = {0x5f,0x61,0x73,0x6d};
-
-    BUFFER_INIT(buf,4,0x5f);
-    BUFFER_INIT(ori,8,0x5f);
-
-    BUFFER_FILL(ori,4,magic,4);
-
-    BUFFER_SLCE(buf,1,ori,5,3);
-    debug_out("%s\n",BUFFER_DATA(buf));
-
-    BUFFER_FILL(buf,1,"eagic",2);
-    debug_out("%s\n",BUFFER_DATA(buf));
-
-    BUFFER_FILL(buf,0,magic,4);
-    i32 read;
-    BUFFER_READ(buf,0,&read,sizeof(i32));
-    debug_out("%d\n", read);
-
-    BUFFER_FREE(buf);
-    BUFFER_FREE(ori);
+    buffer b = buffer_init(sizeof(int));
+    for (int i = 0; i < 10; i++) {
+        array a = array_from_array(&i, 1, sizeof(int));
+        buffer_write(b, a, 1);
+    }
+    array res;
+    buffer_read(&res, b, 10);
+    for (int i = 0; i < 10; i++) {
+        int re = 0;
+        array_get(&re, res, i);
+        TEST_ASSERT_EQUAL_INT(i, re);
+    }
+    buffer_destroy(b);
 }

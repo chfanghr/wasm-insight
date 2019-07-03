@@ -11,5 +11,7 @@ add_library(set set/set.c set/set.h)
 add_library(stack stack/stack.h stack/stack.c)
 add_library(vector vector/vector.c vector/vector.h)
 add_library(buffer buffer/buffer.c buffer/buffer.h)
+
+
 target_link_libraries(stack deque)
 target_link_libraries(data array deque list set stack vector buffer)

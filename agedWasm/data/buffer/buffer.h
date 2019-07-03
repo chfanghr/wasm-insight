@@ -10,7 +10,7 @@
 
 typedef struct internal_buffer *buffer;
 
-buffer buffer_init(int buffer_size, size_t data_size);
+buffer buffer_init(int buffer_size);
 
 int buffer_size(buffer me);
 

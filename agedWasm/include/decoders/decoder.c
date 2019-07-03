@@ -20,11 +20,11 @@ wasmObject_t* decode(array wasm){
     BUFFER_FILL(wasmRAW,0,(byte*)array_get_data(wasm),array_size(wasm));
 
     /* decode magic */
-    array magicRAWarr = array_slice(wasm,0,sizeof_magic+sizeof(i32));
-    magicObject_t* res = decodeMagic(magicRAWarr);
+    array magicArr = array_slice(wasm,0,sizeof_magic+sizeof(i32));
+    magicObject_t* res = decodeMagic(magicArr);
     debug_out("\nWASM Version: %d\n",res->version);
     free_a(res);
-    array_destroy(magicRAWarr);
+    array_destroy(magicArr);
     pointer += sizeof_magic+sizeof(i32);
     
     /* find segs */

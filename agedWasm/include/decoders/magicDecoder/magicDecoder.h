@@ -4,6 +4,8 @@
 #include <datas/types.h>
 #include <objects/magic/magicObject.h>
 
-magicObject_t* decodeMagic(BUFFER* buf);
+#include <array/array.h>
+
+magicObject_t* decodeMagic(array raw);
 
 #endif

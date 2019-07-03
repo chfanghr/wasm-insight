@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 2.8)
 PROJECT(AGEDWASM)
 
 INCLUDE_DIRECTORIES("include")
+INCLUDE_DIRECTORIES("data")
 SET(EXECUTABLE_OUTPUT_PATH ./bin/)
 SET(LIBRARY_OUTPUT_PATH ./lib/)
 
@@ -50,7 +51,7 @@ ADD_EXECUTABLE(main main.c)
 
 ADD_EXECUTABLE(tests test/buffer.h test/decoder.h test/readers.h test/vector.h test/tests.c test/fix_msvc.c)
 
-TARGET_LINK_LIBRARIES(tests unity decoder wasmObjects readers adaptlibs)
-TARGET_LINK_LIBRARIES(main adaptlibs)
-
 ADD_SUBDIRECTORY(data)
+
+TARGET_LINK_LIBRARIES(tests unity decoder wasmObjects readers adaptlibs data datas)
+TARGET_LINK_LIBRARIES(main adaptlibs)

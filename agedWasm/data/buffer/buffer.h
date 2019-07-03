@@ -10,13 +10,13 @@
 
 typedef struct internal_buffer *buffer;
 
-buffer buffer_init(int buffer_size);
+buffer buffer_init(size_t data_size);
 
 int buffer_size(buffer me);
 
-int buffer_read(array *data, buffer me);
+int buffer_read(array *data, buffer me, int n_element);
 
-int buffer_write(buffer me, array *data);
+int buffer_write(buffer me, array data, int n_element);
 
 int buffer_read_available(buffer me);
 

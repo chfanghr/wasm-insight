@@ -74,7 +74,52 @@ int array_get(void *const data, array me, const int index) {
 }
 
 array array_destroy(array me) {
-    free(me->data);
+    if (me->data)free(me->data);
     free(me);
     return NULL;
+}
+
+array array_slice(array me, int start, int end) {
+    if (start < 0 || start >= me->item_count || start > end)return NULL;
+    if (end < 0 || end > me->item_count)return NULL;
+    array init = array_init(end - start, me->bytes_per_item);
+    if (init == NULL)return NULL;
+    if (end - start == 0)return init;
+    if (!memcpy(init->data, me->data + start * me->bytes_per_item, me->bytes_per_item * (end - start)))return NULL;
+    return init;
+}
+
+array array_append(array me, array b) {
+    if ((!me) && b)return array_copy(b);
+    else if (me && (!b))return array_copy(me);
+    else if (!me)return NULL;
+
+    if (me->bytes_per_item != b->bytes_per_item || me->bytes_per_item == 0)return NULL;
+    array init = array_init(me->item_count + b->item_count, me->bytes_per_item);
+    if (init == NULL)return NULL;
+    if (me->item_count)
+        if (!memcpy(init->data, me->data, me->item_count * me->bytes_per_item)) {
+            array_destroy(init);
+            return NULL;
+        }
+    if (b->item_count)
+        if (!memcpy(init->data + me->bytes_per_item * me->item_count, b->data, b->bytes_per_item * b->item_count)) {
+            array_destroy(init);
+            return NULL;
+        }
+    return init;
+}
+
+array array_prepend(array me, array b) {
+    return array_append(b, me);
+}
+
+array array_copy(array me) {
+    array init = array_init(me->item_count, me->bytes_per_item);
+    if (!init)return NULL;
+    if (!memcpy(init->data, me->data, me->bytes_per_item * me->item_count)) {
+        array_destroy(init);
+        return NULL;
+    }
+    return init;
 }

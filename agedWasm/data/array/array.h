@@ -23,4 +23,12 @@ int array_get(void *data, array me, int index);
 
 array array_destroy(array me);
 
+array array_slice(array me, int start, int end);
+
+array array_append(array me, array b);
+
+array array_prepend(array me, array b);
+
+array array_copy(array me);
+
 #endif //DATA_ARRAY_H

@@ -1,6 +1,6 @@
 #include <decoders/decoder.h>
-#include <addExample.h>
-#include <importExample.h>
+#include "../src/addExample.h"
+#include "../src/importExample.h"
 
 #include <array/array.h>
 #include <string.h>

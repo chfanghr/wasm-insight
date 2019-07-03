@@ -5,4 +5,11 @@
 #ifndef DATA_DATA_H
 #define DATA_DATA_H
 
+#include "array/array.h"
+#include "deque/deque.h"
+#include "list/list.h"
+#include "set/set.h"
+#include "stack/stack.h"
+#include "vector/vector.h"
+
 #endif //DATA_DATA_H

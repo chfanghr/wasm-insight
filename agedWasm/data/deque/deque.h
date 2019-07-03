@@ -33,7 +33,6 @@ int deque_set_at(deque me, int index, void *data);
 
 int deque_set_last(deque me, void *data);
 
-
 int deque_get_first(void *data, deque me);
 
 int deque_get_at(void *data, deque me, int index);

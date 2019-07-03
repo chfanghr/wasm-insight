@@ -19,6 +19,7 @@ buffer buffer_init(size_t data_size) {
     struct internal_buffer *init;
     if (data_size == 0)return NULL;
     init = (struct internal_buffer *) malloc(sizeof(struct internal_buffer));
+    if (!init)return NULL;
     init->backend = array_init(initial_buffer_size, data_size);
     init->read_pos = init->write_pos = 0;
     init->bytes_per_item = data_size;
@@ -88,5 +89,15 @@ buffer buffer_destroy(buffer me) {
     array_destroy(me->backend);
     free(me);
     return NULL;
+}
+
+buffer buffer_from_array(array arr) {
+    struct internal_buffer *init;
+    init = (struct internal_buffer *) malloc(sizeof(struct internal_buffer));
+    if (!init)return NULL;
+    init->backend = array_copy(arr);
+    init->bytes_per_item = array_bytes_per_item(arr);
+    init->write_pos = init->read_pos = 0;
+    return init;
 }
 

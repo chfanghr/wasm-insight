@@ -134,3 +134,7 @@ array array_from_array(void *arr, int element_count, size_t data_size) {
     }
     return init;
 }
+
+size_t array_bytes_per_item(array me) {
+    return me->bytes_per_item;
+}

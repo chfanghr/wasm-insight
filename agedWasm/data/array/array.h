@@ -33,4 +33,6 @@ array array_copy(array me);
 
 array array_from_array(void *arr, int element_count, size_t data_size);
 
+size_t array_bytes_per_item(array me);
+
 #endif //DATA_ARRAY_H

@@ -22,4 +22,6 @@ int buffer_read_available(buffer me);
 
 buffer buffer_destroy(buffer me);
 
+buffer buffer_from_array(array arr);
+
 #endif //AGEDWASM_BUFFER_H

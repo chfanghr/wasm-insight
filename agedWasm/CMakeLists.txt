@@ -49,7 +49,7 @@ ADD_LIBRARY(datas
 
 ADD_EXECUTABLE(main main.c)
 
-ADD_EXECUTABLE(tests test/buffer.h test/decoder.h test/readers.h test/vector.h test/tests.c test/fix_msvc.c)
+ADD_EXECUTABLE(tests test/buffer.h test/decoder.h test/readers.h test/vector.h test/tests.c test/fix_msvc.c test/array.h)
 
 ADD_SUBDIRECTORY(data)
 

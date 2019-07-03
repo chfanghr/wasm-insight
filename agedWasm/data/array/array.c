@@ -123,3 +123,22 @@ array array_copy(array me) {
     }
     return init;
 }
+
+array array_from_array(void *arr, int element_count, size_t data_size) {
+    struct internal_array *init;
+    if (element_count < 0 || data_size == 0) {
+        return NULL;
+    }
+    init = malloc(sizeof(struct internal_array));
+    if (!init) {
+        return NULL;
+    }
+    init->bytes_per_item = data_size;
+    init->item_count = element_count;
+    if (init->item_count == 0) {
+        init->data = NULL;
+        return init;
+    }
+    init->data = arr;
+    return init;
+}

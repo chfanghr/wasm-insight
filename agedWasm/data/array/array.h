@@ -31,4 +31,6 @@ array array_prepend(array me, array b);
 
 array array_copy(array me);
 
+array array_from_array(void *arr, int element_count, size_t data_size);
+
 #endif //DATA_ARRAY_H
